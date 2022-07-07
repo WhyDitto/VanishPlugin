@@ -2,6 +2,7 @@ package ditto.vanish.Events;
 
 import ditto.vanish.Main;
 import ditto.vanish.Utils.ChatUtil;
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -14,6 +15,9 @@ public class joinEvent implements Listener {
         if(Main.getVanished().contains(player.getUniqueId().toString())){
             event.setJoinMessage(null);
             player.sendMessage(ChatUtil.colorize("&4You are in vanish and have joined quietly"));
+            for(Player players : Bukkit.getOnlinePlayers()){
+                players.hidePlayer(player);
+            }
         }
     }
 }
