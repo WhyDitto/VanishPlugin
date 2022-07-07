@@ -1,0 +1,9 @@
+name: VanishPlugin
+version: '${project.version}'
+main: ditto.vanish.Main
+authors: [ WhyDitto ]
+description: Vanishes the player
+commands:
+  vanish:
+    description: Vanishes the player
+    usage: /<command>
