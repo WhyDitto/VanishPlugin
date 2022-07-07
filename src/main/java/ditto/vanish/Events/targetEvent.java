@@ -1,7 +1,6 @@
 package ditto.vanish.Events;
 
 import ditto.vanish.Main;
-import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -12,7 +11,6 @@ public class targetEvent implements Listener {
     public void onTarget(EntityTargetLivingEntityEvent event){
         if(event.getTarget() instanceof Player){
             Player target = (Player) event.getTarget();
-            Entity entity = event.getEntity();
             if(Main.getVanished().contains(target.getUniqueId().toString())){
                 event.setCancelled(true);
                 event.setTarget(null);
